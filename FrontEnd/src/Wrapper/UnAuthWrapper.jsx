@@ -1,11 +1,11 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const UnAuthWrapper = (props) => {
-    const {isAuthenticated} = useSelector((state)=>state.user)
-  return !isAuthenticated? props.children : <Navigate to='/dashboard' />
-}
+  const { isAuthenticated } = useSelector((state) => state.user);
+  return !isAuthenticated ? props.children : <Navigate to="/topics" />;
+};
 
-export default UnAuthWrapper
+export default UnAuthWrapper;
