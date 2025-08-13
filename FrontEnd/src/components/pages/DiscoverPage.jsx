@@ -8,7 +8,7 @@ import GlobeIcon from '../common/GlobeIcon';
 
 const DiscoverPage = () => (
     <div className="max-w-screen-xl mx-auto">
-        <Header />
+        
         <main className="px-4 sm:px-8 md:px-16 mt-12 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                 <div className="text-sm font-semibold text-gray-800">Our Mission</div>

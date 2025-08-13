@@ -1,5 +1,7 @@
 import React from 'react';
 import DiscoverPage from './components/pages/DiscoverPage';
+import Mainroutes from './Routes/Mainroutes';
+import Header from './components/layout/Header';
 export default function App() {
     return (
         <div className="bg-white min-h-screen font-sans">
@@ -14,7 +16,8 @@ export default function App() {
                 body { font-family: 'Inter', sans-serif; }
             `}</style>
 
-            <DiscoverPage />
+            <Header/>
+            <Mainroutes/>
         </div>
     );
 }
