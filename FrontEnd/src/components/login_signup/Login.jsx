@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 
 import { useForm } from 'react-hook-form';
-import { auth } from '../../config/firebase';
+import { auth,db } from '../../config/firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { useDispatch } from "react-redux";
+import {
+  setUser
+  
+} from "../../reducer/Slice/userSlice";
 
 
 
@@ -41,7 +47,8 @@ const EyeOffIcon = ({ className }) => (
 // --- Main App Component ---
 
 const Login = () => {
-    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const Navigate = useNavigate();
     const [passwordVisible, setPasswordVisible] = useState(false);
     const {
     register,handleSubmit
@@ -51,17 +58,49 @@ const Login = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-    const loginhandler = async (data) => {
+    const loginhandler = async (credentials) => {
+    
     try {
-      // Step 1: Sign in user
-      await signInWithEmailAndPassword(auth, data.email, data.password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      const firebaseUser = userCredential.user;
+      
+      const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
+      const userProfile = userDoc.data();
 
-      // Step 2: Navigate if login successful
-      navigate("/dashboard"); // <-- change to your page
+      const completeUserData = {
+
+        
+        uid: firebaseUser.uid,
+        email: firebaseUser.email,
+        isAuthenticated: true,
+
+        
+        name: userProfile.name,
+        referralId: userProfile.referralId,
+        totalDonations: userProfile.totalDonations || 0
+      };
+
+      
+      dispatch(setUser(completeUserData));
+
+      console.log(userProfile);
+      
+
+      Navigate('/dashboard')
     } catch (error) {
-      console.error("Login error:", error.message);
-      alert(error.message);
+      console.error("Login error:", error)
+      
+      
+     
+         
     }
+    
+    
+
   };
 
     
