@@ -23,7 +23,7 @@ const ChatCard = () => (
                     className="w-8 h-8 rounded-full"
                     onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/40x40/ffffff/000000?text=Err'; }}
                 />
-                <p className="ml-3 text-white text-sm font-medium">Texas Hold Em</p>
+                <p className="ml-3 text-white text-sm font-medium"></p>
                 <div className="ml-auto w-4 h-4 bg-white rounded-full"></div>
             </div>
         </div>

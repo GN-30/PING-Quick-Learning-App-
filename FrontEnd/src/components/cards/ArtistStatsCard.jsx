@@ -6,14 +6,9 @@ const ArtistStatsCard = () => (
             <HeadphoneIcon />
         </div>
         <div className="mt-auto">
-            <img 
-                src="https://placehold.co/250x250/2d3748/ffffff?text=Artist" 
-                alt="Artist" 
-                className="w-full h-48 object-cover rounded-2xl mb-4"
-                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/250x250/2d3748/ffffff?text=Image+Error'; }}
-            />
-            <p className="text-3xl font-bold">4.9 M</p>
-            <p className="text-sm opacity-80">Listeners — This week</p>
+            
+            
+            <p className="text-sm opacity-80">120K Reads  — This week</p>
         </div>
     </div>
 );
