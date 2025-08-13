@@ -25,10 +25,30 @@ export const userSlice = createSlice({
       state.loading = false; 
       state.error = null; 
     },
+    clearUser: (state) => {
+      
+      state.isAuthenticated = false;
+      state.uid = null;
+      state.email = null
+      state.name = null
+     
+      
+      state.createdAt = null;
+      state.error = null;
+      state.loading = false
+    },
+
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
+
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setUser } = userSlice.actions
+export const { setUser,clearUser,setLoading,setError } = userSlice.actions
 
 export default userSlice.reducer

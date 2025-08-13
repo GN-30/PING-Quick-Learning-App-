@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import {
-  setUser
+  setUser,setLoading,
+  setError
   
 } from "../../reducer/Slice/userSlice";
 
@@ -59,6 +60,8 @@ const Login = () => {
     };
 
     const loginhandler = async (credentials) => {
+        dispatch(setError(null));
+        dispatch(setLoading(true));
     
     try {
       const userCredential = await signInWithEmailAndPassword(
