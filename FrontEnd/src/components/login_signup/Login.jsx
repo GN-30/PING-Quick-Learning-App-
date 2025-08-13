@@ -149,8 +149,12 @@ const Login = () => {
         {/* Left Panel: Login Form */}
         <div className="w-full md:w-1/2 p-8 sm:p-12">
           <div className="flex items-center mb-8">
-            <JFinanceLogo />
-            <h1 className="ml-3 text-2xl font-bold text-gray-800">J.Finance</h1>
+            <img
+              src="../../../public/icon.png"
+              alt="Logo"
+              className="w-12 h-12 rounded-full"
+            />
+            <h1 className="ml-3 text-2xl font-bold text-gray-800">PING</h1>
           </div>
 
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
