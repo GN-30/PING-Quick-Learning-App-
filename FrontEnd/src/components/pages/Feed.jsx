@@ -123,13 +123,15 @@ FACT: [The fascinating fact or explanation].
   }, [fetchNewFact]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4 font-sans">
-      <div className="w-full max-w-2xl text-center">
-        <h1 className="text-2xl text-gray-400 mb-4">Welcome, {name}</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col items-center justify-center p-6 font-sans">
+      <div className="w-full max-w-3xl text-center space-y-6">
+        <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 drop-shadow-lg">
+          Welcome, {name}
+        </h1>
 
         {facts.length === 0 && !isLoading && (
-          <div className="text-gray-300 text-lg animate-pulse">
-            <p>
+          <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg backdrop-blur-md border border-gray-700 animate-pulse">
+            <p className="text-lg text-gray-300">
               Press the{" "}
               <span className="font-bold text-blue-400">Down Arrow</span> key to
               get your first fact.
@@ -138,8 +140,8 @@ FACT: [The fascinating fact or explanation].
         )}
 
         {isLoading && facts.length === 0 && (
-          <div className="text-gray-300 text-lg">
-            <p>
+          <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg backdrop-blur-md border border-gray-700">
+            <p className="text-lg text-gray-300">
               Searching for your first fact about{" "}
               <span className="font-semibold text-blue-400">
                 {currentTopic}
@@ -150,11 +152,11 @@ FACT: [The fascinating fact or explanation].
         )}
 
         {facts.length > 0 && (
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg animate-fade-in transition-all duration-300">
-            <p className="text-sm font-semibold text-blue-400 mb-3">
+          <div className="bg-gray-900/80 p-8 rounded-2xl shadow-2xl border border-gray-700 hover:shadow-blue-500/20 transition-all duration-500 animate-fade-in">
+            <p className="text-sm uppercase tracking-widest font-semibold text-blue-400 mb-3">
               Topic: {facts[0].topic}
             </p>
-            <p className="text-2xl md:text-3xl leading-relaxed mb-4">
+            <p className="text-lg md:text-xl leading-relaxed mb-4 text-gray-200">
               {facts[0].fact}
             </p>
             {facts[0].source && (
@@ -164,7 +166,7 @@ FACT: [The fascinating fact or explanation].
                   href={facts[0].source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-300"
+                  className="underline hover:text-blue-300 transition-colors"
                 >
                   {facts[0].source}
                 </a>

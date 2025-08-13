@@ -1,10 +1,5 @@
+import React from "react";
 
-import React from 'react';
-
-const LiveEventCard = () => (
-    <div className="bg-black rounded-3xl overflow-hidden shadow-lg h-full">
-        
-    </div>
-);
+const LiveEventCard = () => <div></div>;
 
 export default LiveEventCard;

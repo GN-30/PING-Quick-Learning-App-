@@ -74,17 +74,19 @@ const Topic = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col items-center justify-center p-6 font-sans">
       <div className="w-full max-w-3xl text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+        {/* Heading */}
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 drop-shadow-lg">
           Welcome to KnowledgeSphere
         </h1>
-        <p className="text-lg text-gray-400 mb-8">
+        <p className="text-lg text-gray-300 mb-10">
           What sparks your curiosity? Choose a few topics to personalize your
           feed.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {/* Topic Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {TOPICS.map((topic) => {
             const isSelected = selected.includes(topic);
             return (
@@ -92,13 +94,13 @@ const Topic = () => {
                 key={topic}
                 onClick={() => handleTopicClick(topic)}
                 className={`
-                  px-4 py-2 rounded-full font-semibold text-sm md:text-base transition-all duration-200 ease-in-out transform hover:scale-105
-                  ${
-                    isSelected
-                      ? "bg-blue-600 text-white shadow-lg ring-2 ring-blue-400" // Style for selected
-                      : "bg-gray-700 text-gray-300 hover:bg-gray-600" // Style for not selected
-                  }
-                `}
+              px-5 py-2.5 rounded-full font-medium text-sm md:text-base transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer
+              ${
+                isSelected
+                  ? "bg-gradient-to-r from-blue-500 to-blue-700 text-white ring-2 ring-blue-300 "
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600"
+              }
+            `}
               >
                 {topic}
               </button>
@@ -106,10 +108,11 @@ const Topic = () => {
           })}
         </div>
 
+        {/* Continue Button */}
         <button
           onClick={handleSubmit}
-          disabled={loading} // Disable the button while the thunk is running
-          className="w-full max-w-xs bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-all duration-200"
+          disabled={loading}
+          className="w-full max-w-xs bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 disabled:from-gray-700 disabled:to-gray-800 disabled:cursor-not-allowed text-white font-semibold py-3 px-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
         >
           {loading ? "Saving..." : "Continue"}
         </button>

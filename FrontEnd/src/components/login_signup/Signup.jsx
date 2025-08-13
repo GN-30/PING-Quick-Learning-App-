@@ -132,61 +132,65 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-gray-100 flex items-center justify-center min-h-screen font-sans">
-      <div className="relative flex w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden my-8">
-        {/* Left Panel: Login Form */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center font-sans p-4">
+      <div className="relative flex w-full max-w-4xl bg-white/90 dark:bg-gray-900/80 rounded-3xl shadow-2xl overflow-hidden my-8 backdrop-blur-md">
+        {/* Left Panel: Registration Form */}
         <div className="w-full md:w-1/2 p-8 sm:p-12">
+          {/* Logo */}
           <div className="flex items-center mb-8">
-            <img
-              src="../../../public/icon.png"
-              alt="Logo"
-              className="w-12 h-12 rounded-full"
-            />
-            <h1 className="ml-3 text-2xl font-bold text-gray-800">PING</h1>
+            <h1 className="ml-3 text-2xl font-bold text-gray-800 dark:text-white">
+              PING
+            </h1>
           </div>
 
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Register!</h2>
-          <p className="text-gray-500 mb-8">Sign up now</p>
+          <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-2">
+            Register!
+          </h2>
+          <p className="text-gray-500 dark:text-gray-300 mb-8">Sign up now</p>
 
+          {/* Registration Form */}
           <form onSubmit={handleSubmit(signuphandler)} className="space-y-6">
+            {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Name
               </label>
               <input
                 {...register("name")}
                 type="text"
                 placeholder="Name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-xl bg-white/70 dark:bg-gray-800/70 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition backdrop-blur-sm"
               />
             </div>
 
+            {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Email
               </label>
               <input
                 {...register("email")}
                 type="email"
                 placeholder="Email"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-xl bg-white/70 dark:bg-gray-800/70 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition backdrop-blur-sm"
               />
             </div>
 
+            {/* Password */}
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Password
               </label>
               <input
                 {...register("password")}
                 type={passwordVisible ? "text" : "password"}
                 placeholder="Password"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-xl bg-white/70 dark:bg-gray-800/70 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition backdrop-blur-sm"
               />
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
-                className="absolute inset-y-0 right-0 top-7 pr-3 flex items-center text-gray-500 hover:text-gray-700"
+                className="absolute inset-y-0 right-0 top-7 pr-3 flex items-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition"
               >
                 {passwordVisible ? (
                   <EyeOffIcon className="h-5 w-5" />
@@ -198,50 +202,42 @@ const Signup = () => {
 
             <button
               type="submit"
-              className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+              className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
               Sign Up
             </button>
           </form>
 
+          {/* Divider */}
           <div className="flex items-center my-8">
-            <hr className="flex-grow border-gray-300" />
-            <span className="mx-4 text-gray-400 text-sm">or continue</span>
-            <hr className="flex-grow border-gray-300" />
+            <hr className="flex-grow border-gray-300 dark:border-gray-600" />
+            <span className="mx-4 text-gray-400 dark:text-gray-500 text-sm">
+              or continue
+            </span>
+            <hr className="flex-grow border-gray-300 dark:border-gray-600" />
           </div>
 
-          <button className="w-full border border-gray-300 py-3 rounded-lg flex items-center justify-center text-gray-700 font-medium hover:bg-gray-50 transition-colors">
+          <button className="w-full border border-gray-300 dark:border-gray-600 py-3 rounded-xl flex items-center justify-center text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors shadow-md cursor-pointer">
             <GoogleIcon />
             Sign up with Google
           </button>
 
-          <p className="text-center text-sm text-gray-500 mt-10">
-            Don't have an account?{" "}
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-10">
+            Already have an account?{" "}
             <a
               href="#"
-              className="text-indigo-600 font-semibold hover:underline"
+              className="text-indigo-600 font-semibold hover:text-indigo-500 hover:underline transition-colors"
             >
-              Sign Up
+              Login
             </a>
           </p>
         </div>
 
         {/* Right Panel: Illustration */}
-        <div className="hidden md:flex w-1/2 p-12 bg-gray-900 text-white flex-col items-center justify-center relative">
-          {/* Abstract background shapes */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500 rounded-full opacity-20"></div>
-          <div className="absolute -bottom-16 -left-12 w-40 h-40 bg-green-400 rounded-full opacity-10"></div>
-
-          <img
-            src="https://placehold.co/400x400/111827/ffffff?text=3D+Illustration"
-            alt="3D Illustration of a person using a laptop"
-            className="w-64 h-64 object-contain z-10 mb-8"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src =
-                "https://placehold.co/400x400/111827/ffffff?text=Image+Error";
-            }}
-          />
+        <div className="hidden md:flex w-1/2 p-12 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white flex-col items-center justify-center relative overflow-hidden rounded-r-3xl">
+          {/* Abstract shapes */}
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500 rounded-full opacity-20 animate-pulse-slow"></div>
+          <div className="absolute -bottom-16 -left-12 w-40 h-40 bg-green-400 rounded-full opacity-10 animate-pulse-slow"></div>
 
           <h2 className="text-3xl font-bold text-center mb-3 z-10">
             Learn Anytime, Anywhere
@@ -252,9 +248,9 @@ const Signup = () => {
           </p>
 
           <div className="flex space-x-2 mt-8 z-10">
-            <div className="w-2 h-2 rounded-full bg-gray-600"></div>
-            <div className="w-2 h-2 rounded-full bg-white"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-600"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-600 animate-bounce-slow"></div>
+            <div className="w-2 h-2 rounded-full bg-white animate-bounce-slow delay-200"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-600 animate-bounce-slow delay-400"></div>
           </div>
         </div>
       </div>

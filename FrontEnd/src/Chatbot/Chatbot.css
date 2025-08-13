@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playball&display=swap');
+
 .chatbot-container {
   width: 350px;
   height: 480px;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
   border: none;
-  background: linear-gradient(110deg, #05417d 60%, #93c4f5 100%);
+  background: rgba(5, 65, 125, 0.85); /* Transparent gradient overlay */
+  backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
   position: fixed;
   bottom: 32px;
   right: 32px;
   z-index: 1000;
-  transition: opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .messages {
@@ -21,58 +25,67 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  scroll-behavior: smooth;
 }
 
 .message {
   max-width: 80%;
-  margin: 0 0 4px 0;
-  padding: 10px 16px;
-  border-radius: 16px;
+  padding: 12px 18px;
+  border-radius: 20px;
   font-size: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   word-break: break-word;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s;
 }
 
 .message.user {
-  background: linear-gradient(90deg, #0078ff 70%, #0056b3 100%);
+  background: rgba(0, 120, 255, 0.85);
   color: white;
   align-self: flex-end;
-  font-family: 'Montserrat', sans-serif;
-  font-size: medium;
+  font-size: 15px;
+  font-weight: 500;
+  transform: translateX(0);
+}
+
+.message.user:hover {
+  transform: translateX(-2px);
 }
 
 .message.bot {
-  background: #f3f4f6;
+  background: rgba(255, 255, 255, 0.85);
   color: #222;
   align-self: flex-start;
-  border: 1px solid #e0e7ff;
-  font-family: "Montserrat", sans-serif;
-  font-size: medium;
+  border: 1px solid rgba(224, 231, 255, 0.6);
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .input-area {
   display: flex;
   padding: 12px;
-  background: #f1f5f9;
-  border-top: 1px solid #e0e7ff;
-  border-radius: 0 0 18px 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border-top: 1px solid rgba(224, 231, 255, 0.7);
+  border-radius: 0 0 20px 20px;
+  backdrop-filter: blur(10px);
 }
 
 .input-area input {
   flex: 1;
   padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  border: 1px solid rgba(224, 231, 255, 0.6);
   font-size: 15px;
   outline: none;
   margin-right: 8px;
-  background: #fff;
-  transition: border 0.2s;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 .input-area input:focus {
   border: 1.5px solid #0078ff;
+  box-shadow: 0 0 8px rgba(0, 120, 255, 0.4);
 }
 
 .input-area button {
@@ -80,12 +93,14 @@
   background: linear-gradient(90deg, #0078ff 70%, #0056b3 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .input-area button:hover {
   background: linear-gradient(90deg, #0056b3 70%, #0078ff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
