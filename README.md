@@ -9,7 +9,6 @@ KnowledgeSphere is an AI-powered content platform that transforms learning into 
 
 - **Personalized Feed:** Choose your topics of interest, and your feed is instantly customized.  
 - **AI-Powered Fact Reel:** Press the Down Arrow key to get a fresh, insightful fact generated in real-time by the **Mistral Mixtral 8x7B AI model**.  
-- **Sourced & Credible:** Every fact includes a source URL for verifiable, reputable information.  
 - **Modern & Fast UI:** Built with **React** and **Redux** for a seamless user experience.  
 - **Secure Authentication:** User accounts are securely managed using **Firebase Authentication**.
 
