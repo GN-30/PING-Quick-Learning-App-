@@ -35,7 +35,7 @@ KnowledgeSphere is an AI-powered content platform that transforms learning into 
 
 ## **Setup and Installation**
 
-### 1. Clone the Repository
+### Clone the Repository
 ```bash
 git clone https://github.com/GN-30/PING-Quick-Learning-App-
 
