@@ -1,4 +1,4 @@
-# KnowledgeSphere 🧠✨
+# PING
 
 **Scroll Smarter, Not Harder.**  
 KnowledgeSphere is an AI-powered content platform that transforms learning into an addictive, personalized experience. It replaces mindless scrolling with an infinite reel of fascinating facts and foundational knowledge, tailored to your unique interests.
