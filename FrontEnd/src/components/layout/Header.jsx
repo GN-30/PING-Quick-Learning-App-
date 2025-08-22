@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Chatbot from "../../Chatbot/Chatbot";
-import LogoutWrapper from "../../Wrapper/Logoutwrapper";
+import LogoutWrapper from "../../Wrapper/LogoutWrapper";
 
 const Header = () => {
   const [showChatbot, setShowChatbot] = useState(false);

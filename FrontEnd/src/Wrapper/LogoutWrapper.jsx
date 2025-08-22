@@ -1,15 +1,12 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, useNavigate } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
 
-
-import {
-  clearUser,
-} from "../reducer/Slice/userSlice"
+import { clearUser } from "../reducer/Slice/userSlice";
 
 const LogoutWrapper = ({ children }) => {
   const { isAuthenticated } = useSelector((state) => state.user);
@@ -20,7 +17,7 @@ const LogoutWrapper = ({ children }) => {
     try {
       await signOut(auth);
       dispatch(clearUser());
-      navigate('/');
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
@@ -38,5 +35,4 @@ const LogoutWrapper = ({ children }) => {
   );
 };
 
-
-export default LogoutWrapper
+export default LogoutWrapper;
