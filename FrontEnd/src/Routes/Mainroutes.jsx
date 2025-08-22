@@ -4,7 +4,7 @@ import Login from "../components/login_signup/Login";
 import Signup from "../components/login_signup/Signup";
 import DiscoverPage from "../components/pages/DiscoverPage";
 
-import AuthWrapper from "../Wrapper/Authwrapper";
+import AuthWrapper from "../Wrapper/AuthWrapper";
 import UnAuthWrapper from "../Wrapper/UnAuthWrapper";
 import Topics from "../components/pages/Topic";
 import Feed from "../components/pages/Feed";
